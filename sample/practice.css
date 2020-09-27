@@ -1,0 +1,39 @@
+body {
+    background-color: midnightblue;
+    color: midnightblue;
+    text-align: center;
+    align-content: center;
+}
+
+.red {
+    border-color: red;
+    border-width: 2px;
+    background-color: lavenderblush;
+}
+
+.green {
+    border-color: rgb(8, 156, 8);
+    border-width: 2px;
+}
+
+.myIfs {
+    /* margin-left: 24.9%; */
+    border: none;
+
+}
+
+#app {
+    /* margin-top: %; */
+    border: 2px solid rgb(12, 36, 17);
+	border-radius: 15px;
+    width: 40%;
+    margin-top: 4%;
+    margin-left: 30%;
+    text-align: center;
+    background-color: rgb(84, 185, 168);
+    padding-bottom: 18px; 
+}
+
+input{
+    background-color: rgb(221, 238, 238);
+}

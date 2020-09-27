@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Vue.js Practice</title>
+        <link rel="stylesheet" href="practice.css">
+    </head>
+    <body>
+
+        <div id="app">
+            <h1> {{ something }} </h1>
+            <input v-model="something">
+            <br>
+            <br>
+            <div v-if="count == 1" class="myIfs">
+                it was true!
+                <!-- not rendered to DOM if false -->
+            </div>
+            <div v-else-if="count == 2" class="myIfs">
+                the other was true!
+            </div>            
+            <div v-else class="myIfs">
+                it wasn't ture :(
+            </div>
+            <div v-show="count == 1">
+                show it was true!
+                <!-- not shown if false -->
+            </div>
+            <br>
+            <input v-model="email" :class="[email.length < 3 ? 'red' : 'green']" >
+            <button onclick="alert('successfully done')" v-bind:disabled="email.length < 3">
+                lil button 
+            </button>
+            <br>
+            <p v-text="something"></p>
+            <p v-once>{{something}}</p>
+            <button v-on:click="reverseMessage">Reverse Message</button>
+            <br>
+            <p>Using v-html directive: <span v-html="something"></span></p>
+            <div>
+                yummies:
+                <ul>
+                    <li v-for="food in yummies">{{food}}</li>
+                </ul>
+                <br>
+                <input v-model="newfruit" v-on:keyup.enter="addfruit">
+                <button v-on:click="addfruit">
+                        add
+                </button>
+                <br>
+                fruits:
+                <ol>
+                    <li v-for="fruit in fruits">{{ fruit.name | capitalize }}</li>
+                </ol>
+            </div>
+            <span>
+                    Active:
+                    <label for="userStateActive">
+                    Yes:
+                    <input type="radio" v-bind:value="true" id="userStateActive"
+                    v-model="filter.userState" selected>
+                    </label>
+                    <label for="userStateInactive">
+                    No:
+                    <input type="radio" v-bind:value="false"
+                    id="userStateInactive" v-model="filter.userState">
+                    </label>
+            </span>
+            <p>
+            <select v-model="selected">
+                <option disabled value="">Please select one</option>
+                <option>A</option>
+                <option>B</option>
+                <option>C</option>
+            </select>
+                  <span>Selected {{ selected }}</span>
+            </p>
+            <p>
+            <span v-bind:title="message">
+                Hover your mouse over me for a few seconds
+                to see my dynamically bound title!
+              </span>
+            </p>
+            <!-- <div>
+                <h1>watchers</h1>
+                <input v-model="search value">
+                <span v-show="loading">Loading...</span>
+                <ul>
+                    <li v-for="result in searchresults">{{ result }}</li>
+                </ul>
+            </div> -->
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script type="text/javascript" src="practice.js"></script>
+        <!-- <script src="https://unpkg.com/vue"></script> -->
+        <!-- <script type="text/javascript">
+            //js code
+        </script> -->
+    </body>
+</html>
